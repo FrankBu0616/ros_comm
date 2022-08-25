@@ -394,9 +394,9 @@ void Connection::onHeaderLengthRead(const ConnectionPtr& conn, const boost::shar
 
   uint32_t len = *((uint32_t*)buffer.get());
 
-  if (len > 1000000000)
+  if (len > 2000000000)
   {
-    ROS_ERROR("a header of over a gigabyte was " \
+    ROS_ERROR("a header of over 2 gigabytes was " \
                 "predicted in tcpros. that seems highly " \
                 "unlikely, so I'll assume protocol " \
                 "synchronization is lost.");
